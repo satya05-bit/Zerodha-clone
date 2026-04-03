@@ -11,7 +11,7 @@ const { OrdersModel } = require("./models/OrdersModel");
 
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const {User} = require("./models/UserModel");
+const User = require("./models/UserModel");
 
 const auth = require("./middleware/auth");
 
