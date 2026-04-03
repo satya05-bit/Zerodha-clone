@@ -3,6 +3,8 @@ import {Tooltip, Grow} from '@mui/material';
 import { watchlist } from "../data/data";
 import GeneralContext from "./GeneralContext";
 import {BarChartOutlined, KeyboardArrowDown,KeyboardArrowUp, MoreHoriz} from '@mui/icons-material'
+const API_BASE = process.env.REACT_APP_API_URL;
+
 
 const WatchList = () => {
   return (
@@ -59,7 +61,7 @@ const WatchListActions = ({uid})=>{
    //delete
    const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3002/holdings/${uid}`);
+      await axios.delete(`${API_BASE}/holdings/${uid}`);
       alert("Holding deleted");
       window.location.reload();
     } catch (error) {

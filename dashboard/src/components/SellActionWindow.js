@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,6 +7,8 @@ import axios from "axios";
 import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
+
+const API_BASE = process.env.REACT_APP_API_URL;
 
 
 const SellActionWindow = ({ uid }) => {
@@ -16,7 +19,7 @@ const SellActionWindow = ({ uid }) => {
 
     const handleSellClick = async () => {
         try {
-            await axios.post("http://localhost:3002/orders", {
+            await axios.post(`${API_BASE}/orders`, {
                 name: uid,
                 qty: stockQuantity,
                 price: stockPrice,

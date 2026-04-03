@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const API_BASE = process.env.REACT_APP_API_URL;
+
+
 function Signup() {
 
   const navigate = useNavigate();
@@ -21,7 +24,7 @@ function Signup() {
         console.log("Trying to login with:", email, password);
 
         const res = await axios.post(
-          "http://localhost:3002/login",
+          `${API_BASE}/login`,
           { email, password }
         );
 
@@ -42,7 +45,7 @@ function Signup() {
         console.log("Trying to register:", name, email, password);
 
         const res = await axios.post(
-          "http://localhost:3002/register",
+          `${API_BASE}/register`,
           { name, email, password }
         );
 

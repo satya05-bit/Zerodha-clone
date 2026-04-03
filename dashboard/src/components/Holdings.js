@@ -1,16 +1,19 @@
+
 import React,{useState,useEffect} from "react";
 //import { holdings } from "../data/data";
 import api from "./apis";
 import axios from "axios"
 
 import { Dataset } from "@mui/icons-material";
+const API_BASE = process.env.REACT_APP_API_URL;
+
 
 const Holdings = () => {
 
   const [allHoldings, setAllHoldings]=useState([]);
 
   useEffect(()=>{
-     api.get("http://localhost:3002/allHoldings").then((res)=>{
+     api.get(`${API_BASE}/allHoldings`).then((res)=>{
        console.log(res.data);
       setAllHoldings(res.data);
      })
