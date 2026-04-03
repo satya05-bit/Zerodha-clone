@@ -23,6 +23,13 @@ const app=express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.listen(PORT,()=>{
+    console.log("app started!");
+    mongoose.connect(uri);
+     console.log("DB connect!");
+
+})
+
 // app.get('/addHoldings',async(req,res) => {
 //     let tempHoldings=[
 //         {
@@ -334,7 +341,7 @@ app.post("/register", async (req, res) => {
 
     if (existingUser) {
       return res.status(400).json({
-        message: "User already exists"
+        message: "User already exists",
       });
     }
 
@@ -385,9 +392,3 @@ user: user
 
 });
 
-app.listen(PORT,()=>{
-    console.log("app started!");
-    mongoose.connect(uri);
-     console.log("DB connect!");
-
-})
