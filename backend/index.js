@@ -23,12 +23,18 @@ const app=express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.listen(PORT,()=>{
-    console.log("app started!");
-    mongoose.connect(uri);
-     console.log("DB connect!");
+// app.listen(PORT,()=>{
+//     console.log("app started!");
+//     mongoose.connect(uri);
+//      console.log("DB connect!");
+// })
+mongoose.connect(uri)
+  .then(() => {
+    console.log("DB connected!");
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  })
+  .catch(err => console.error("MongoDB connection error:", err));
 
-})
 
 // app.get('/addHoldings',async(req,res) => {
 //     let tempHoldings=[
@@ -362,7 +368,8 @@ app.post("/register", async (req, res) => {
   } catch (error) {
     console.error("Registration error:", error);
     res.status(500).json({
-      error: "Registration failed"
+      error: "Registration failed",
+      error: error.message
     });
 
   }
