@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="420" height="120" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon (exact flat color) -->
+  <path d="M40 80 C40 40, 80 40, 80 40 L80 80 Z" fill="#387ed1"/>
+  <path d="M80 40 L110 30 L110 80 Z" fill="#387ed1"/>
+
+  <!-- Text -->
+  <text x="130" y="78"
+        font-family="Inter, Helvetica, Arial, sans-serif"
+        font-size="48"
+        letter-spacing="1"
+        fill="#387ed1"
+        font-weight="600">
+    SIGMA
+  </text>
+</svg>
