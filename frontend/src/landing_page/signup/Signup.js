@@ -36,7 +36,7 @@ function Signup() {
         console.log("Token stored:", localStorage.getItem("token"));
 
         // redirect to dashboard
-        navigate("/");
+        window.location.href="https://zerodha-clone-dashboard-py61.onrender.com"
 
       } 
       
