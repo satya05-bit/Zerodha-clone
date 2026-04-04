@@ -12,7 +12,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <ProtectedRoute>
-        <Route path="/*" element={<Home />} />
+        <Route path="/dashboard/*" element={<Home />} />
         </ProtectedRoute>
       </Routes>
     </BrowserRouter>
