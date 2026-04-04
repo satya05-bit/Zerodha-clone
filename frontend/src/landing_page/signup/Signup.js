@@ -36,7 +36,7 @@ function Signup() {
         console.log("Token stored:", localStorage.getItem("token"));
 
         // redirect to dashboard
-        navigate("/dashboard");
+        navigate("/");
 
       } 
       
