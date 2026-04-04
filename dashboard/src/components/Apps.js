@@ -4,9 +4,7 @@ import Dashboard from "./Dashboard";
 const Apps = () => {
   return (
     
-      <Routes>
-        <Route path="/dashboard/*" element={<Dashboard />} />
-      </Routes>
+      <h1>Apps</h1>
   
   )
 };
