@@ -6,6 +6,14 @@ const Menu = () => {
     const [selectedMenu,setSelectedMenu] = useState(0);
     const [isProfileDropdownOpen,setIsProfileDropdownOpen]=useState(false);
 
+    const handleLogout = () => {
+
+    localStorage.removeItem("token");
+
+    window.location.href = "https://zerodha-clone-1-3dby.onrender.com";
+
+  };
+
     const handleMenuClick = (index) =>{
         setSelectedMenu(index);
     }
@@ -29,39 +37,41 @@ const Menu = () => {
           </li>
           <li>
             <Link style={{textDecoration:"none"}} to="/orders" 
-            onClick={() => handleMenuClick(0)}>
+            onClick={() => handleMenuClick(1)}>
             <p className={selectedMenu===1 ? activeMenuClass : menuClass}>Orders</p>
             </Link>
           </li>
           <li>
             <Link style={{textDecoration:"none"}} to="/holdings" 
-            onClick={() => handleMenuClick(0)}>
+            onClick={() => handleMenuClick(2)}>
             <p className={selectedMenu===2 ? activeMenuClass : menuClass}>Holdings</p>
             </Link>
           </li>
           <li>
             <Link style={{textDecoration:"none"}} to="/positions" 
-            onClick={() => handleMenuClick(0)}>
+            onClick={() => handleMenuClick(3)}>
             <p className={selectedMenu===3 ? activeMenuClass : menuClass}>Positions</p>
             </Link>
           </li>
           <li>
             <Link style={{textDecoration:"none"}} to="/funds" 
-            onClick={() => handleMenuClick(0)}>
+            onClick={() => handleMenuClick(4)}>
             <p className={selectedMenu===4 ? activeMenuClass : menuClass}>Funds</p>
             </Link>
           </li>
           <li>
             <Link style={{textDecoration:"none"}} to="/apps" 
-            onClick={() => handleMenuClick(0)}>
+            onClick={() => handleMenuClick(5)}>
             <p className={selectedMenu===5 ? activeMenuClass : menuClass}>Apps</p>
             </Link>
           </li>
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick} >
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+          <div className="avatar">SU</div>
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
         </div>
         
       </div>
