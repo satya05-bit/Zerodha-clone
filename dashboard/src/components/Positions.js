@@ -12,7 +12,7 @@ const API_BASE = process.env.REACT_APP_API_URL;
 const Positions = () => {
   const [allPositions,setAllPositions]=useState([]);
   useEffect(()=>{
-     api.get(`${API_BASE}allPositions`).then((res)=>{
+     api.get(`${API_BASE}/allPositions`).then((res)=>{
        console.log(res.data);
       setAllPositions(res.data);
      })
