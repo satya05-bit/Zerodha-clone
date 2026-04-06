@@ -9,7 +9,7 @@ const Orders = () => {
   useEffect(() => {
     axios.get(`${API_BASE}/orders`,{
    headers:{
-     Authorization: localStorage.getItem("token")
+     Authorization:`Bearer ${localStorage.getItem("token")}`
    }
  })
   .then((res) => {
